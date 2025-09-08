@@ -18,7 +18,6 @@ public class FirstSeleniumTest {
 
         driver.navigate().to("https://demowebshop.tricentis.com");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
     }
 
     @Test
