@@ -29,7 +29,7 @@ public class FirstSeleniumTest {
     }
 
     @Test
-    public void findElementsTest() {
+    public void findSomeElementsTest() {
         driver.findElement(By.cssSelector(".header-logo"));
         driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(1)"));
         driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(2)"));
