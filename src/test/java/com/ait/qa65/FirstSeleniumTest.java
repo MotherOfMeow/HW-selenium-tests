@@ -1,5 +1,6 @@
 package com.ait.qa65;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -25,6 +26,20 @@ public class FirstSeleniumTest {
     public void openGoogleTest() {
         String title = driver.getTitle();
         assert title != null && title.contains("Demo Web Shop");
+    }
+
+    @Test
+    public void findElementsTest() {
+        driver.findElement(By.cssSelector(".header-logo"));
+        driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(1)"));
+        driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(2)"));
+        driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(3)"));
+        driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(4)"));
+        driver.findElement(By.xpath("//*[@id=\"pollanswers-1\"]"));
+        driver.findElement(By.id("newsletter-email"));
+        driver.findElement(By.id("newsletter-subscribe-button"));
+        driver.findElement(By.xpath("//*[@id=\"vote-poll-1\"]"));
+        driver.findElement(By.cssSelector(".column.customer-service"));
     }
 
     @AfterMethod()
