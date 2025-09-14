@@ -21,6 +21,7 @@ public class TestBase {
 
     public boolean isHomeComponentPresent(){
         return driver.findElements(By.xpath("/html/body/div[4]/div[1]/div[1]/div[1]")).size()>0;
+//        return driver.findElements(By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]")).size()>0;
     }
 
     public boolean isElementPresent(By locator){
