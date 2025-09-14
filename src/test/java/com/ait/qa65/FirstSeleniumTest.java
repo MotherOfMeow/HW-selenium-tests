@@ -1,5 +1,6 @@
 package com.ait.qa65;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -28,16 +29,30 @@ public class FirstSeleniumTest {
     }
 
     @Test
-    public void findSomeElementsTest() {
+    public void findSomeElementsByXpathTest() {
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[1]/div[1]"));
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[1]"));
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[2]"));
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[3]"));
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[4]"));
+        driver.findElement(By.xpath("//*[@id=\"pollanswers-1\"]"));
+        driver.findElement(By.xpath("//*[@id=\"newsletter-subscribe-block\"]/div[1]"));
+        driver.findElement(By.xpath("//*[@id=\"newsletter-subscribe-button\"]"));
+        driver.findElement(By.xpath("//*[@id=\"vote-poll-1\"]"));
+        driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[1]/div[2]"));
+    }
+
+    @Test
+    public void findElementsByCssTest() {
         driver.findElement(By.cssSelector(".header-logo"));
         driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(1)"));
         driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(2)"));
         driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(3)"));
         driver.findElement(By.cssSelector("ul.top-menu > li:nth-child(4)"));
-        driver.findElement(By.xpath("//*[@id=\"pollanswers-1\"]"));
-        driver.findElement(By.id("newsletter-email"));
-        driver.findElement(By.id("newsletter-subscribe-button"));
-        driver.findElement(By.xpath("//*[@id=\"vote-poll-1\"]"));
+        driver.findElement(By.cssSelector("#pollanswers-1"));
+        driver.findElement(By.cssSelector("#newsletter-email"));
+        driver.findElement(By.cssSelector("#newsletter-subscribe-button"));
+        driver.findElement(By.cssSelector("#vote-poll-1"));
         driver.findElement(By.cssSelector(".column.customer-service"));
     }
 
