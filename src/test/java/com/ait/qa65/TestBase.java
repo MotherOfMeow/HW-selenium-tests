@@ -4,12 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
 public class TestBase {
     WebDriver driver;
+    public static String testEmail;
+
+    @BeforeClass
+    public void generateEmail() {
+        int i = (int) ((System.currentTimeMillis() / 1000) % 3600);
+        testEmail = "hw-test-user" + i + "@gmail.com";
+    }
 
     @BeforeMethod
     public void setUp() {
@@ -19,10 +27,9 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    public boolean isElementPresent(By locator){
-        return driver.findElements(locator).size()>0;
+    public boolean isElementPresent(By locator) {
+        return driver.findElements(locator).size() > 0;
     }
-
 
     public void type(By locator, String text) {
         driver.findElement(locator).click();
@@ -34,7 +41,7 @@ public class TestBase {
         driver.findElement(locator).click();
     }
 
-    @AfterMethod(enabled = false)
+    @AfterMethod()
     public void tearDown() {
         driver.quit();
     }
