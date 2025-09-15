@@ -19,13 +19,19 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    public boolean isHomeComponentPresent(){
-        return driver.findElements(By.xpath("/html/body/div[4]/div[1]/div[1]/div[1]")).size()>0;
-//        return driver.findElements(By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]")).size()>0;
-    }
-
     public boolean isElementPresent(By locator){
         return driver.findElements(locator).size()>0;
+    }
+
+
+    public void type(By locator, String text) {
+        driver.findElement(locator).click();
+        driver.findElement(locator).clear();
+        driver.findElement(locator).sendKeys(text);
+    }
+
+    public void click(By locator) {
+        driver.findElement(locator).click();
     }
 
     @AfterMethod(enabled = false)

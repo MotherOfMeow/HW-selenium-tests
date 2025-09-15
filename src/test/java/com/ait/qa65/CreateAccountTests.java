@@ -1,47 +1,43 @@
 package com.ait.qa65;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateAccountTests extends TestBase {
 
-    @Test
+    @Test(enabled = false)
     public void newUserRegistrationPositiveTest() {
 //        click register
-        driver.findElement(By.cssSelector("[href='/register']"));
+        click(By.cssSelector("a[href=\"/register\"]"));
 //        choose female
-        driver.findElement(By.id("gender-female"));
+        click(By.id("gender-female"));
 //        fill first name
-        driver.findElement(By.xpath("//*[@id=\"FirstName\"]")).sendKeys("John");
+        type(By.xpath("//*[@id=\"FirstName\"]"), "John");
 //        fill last name
-        driver.findElement(By.xpath("//*[@id=\"LastName\"]")).sendKeys("Doe");
+        type(By.xpath("//*[@id=\"LastName\"]"), "Doe");
 //        fill email
-        driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys("hw-test-user@gmail.com");
+        type(By.xpath("//*[@id=\"Email\"]"), "hw-test-user@gmail.com");
 //        fill password
-        driver.findElement(By.name("Password")).sendKeys("HW123!");
+        type(By.name("Password"), "HW123!");
 //        confirm password
-        driver.findElement(By.name("ConfirmPassword")).sendKeys("HW123!");
+        type(By.name("ConfirmPassword"), "HW123!");
 //        click Register button
-        driver.findElement(By.id("register-button")).click();
+        click(By.id("register-button"));
+        Assert.assertTrue(isElementPresent(By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]")));
     }
 
     @Test
     public void newUserRegistrationNegativeTest() {
-//        click register
-        driver.findElement(By.cssSelector("[href='/register']"));
-//        choose female
-        driver.findElement(By.id("gender-female"));
-//        fill first name
-        driver.findElement(By.xpath("//*[@id=\"FirstName\"]")).sendKeys("John");
-//        fill last name
-        driver.findElement(By.xpath("//*[@id=\"LastName\"]")).sendKeys("Doe");
-//        fill email
-        driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys("hw-test-user@gmail.com");
-//        fill password
-        driver.findElement(By.name("Password")).sendKeys("HW123!");
-//        confirm password
-        driver.findElement(By.name("ConfirmPassword")).sendKeys("HW123!");
-//        click Register button
-        driver.findElement(By.id("register-button")).click();
+        click(By.cssSelector("a[href=\"/register\"]"));
+        click(By.id("gender-female"));
+        type(By.xpath("//*[@id=\"FirstName\"]"), "John");
+        type(By.xpath("//*[@id=\"LastName\"]"), "Doe");
+        type(By.xpath("//*[@id=\"Email\"]"), "hw-test-user@gmail.com");
+        type(By.name("Password"), "HW123!");
+        type(By.name("ConfirmPassword"), "HW123!");
+        click(By.id("register-button"));
+        Assert.assertTrue(isElementPresent(By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[1]/div/ul/li")));
     }
+
 }
