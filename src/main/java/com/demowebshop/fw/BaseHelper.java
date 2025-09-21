@@ -1,4 +1,4 @@
-package fw;
+package com.demowebshop.fw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +28,10 @@ public class BaseHelper {
 
     public String getText(By locator) {
         return driver.findElement(locator).getText();
+    }
+
+    public String getTitle() {
+        return driver.getTitle();
     }
 
     public void pause(int millis) {

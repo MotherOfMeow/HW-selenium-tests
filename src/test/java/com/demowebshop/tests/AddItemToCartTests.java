@@ -1,6 +1,8 @@
-package com.ait.qa65;
+package com.demowebshop.tests;
 
-import models.User;
+import com.demowebshop.data.ItemData;
+import com.demowebshop.data.UserData;
+import com.demowebshop.models.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -10,7 +12,7 @@ public class AddItemToCartTests extends TestBase {
     @BeforeMethod
     public void precondition(){
         app.getUser().clickOnLoginLink();
-        app.getUser().fillLoginForm(new User().setEmail("rotTest@gmail.com").setPassword("HW123!"));
+        app.getUser().fillLoginForm(new User().setEmail(UserData.EMAIL).setPassword(UserData.PASSWORD));
         app.getUser().clickOnLoginButton();
     }
     
@@ -20,7 +22,7 @@ public class AddItemToCartTests extends TestBase {
         app.getCart().clickOnShoppingCartLink();
         Assert.assertTrue(app.getItem().isItemNamePresent());
         app.getItem().pause(10);
-        Assert.assertEquals(app.getItem().getItemName().trim(), "14.1-inch Laptop");
+        Assert.assertEquals(app.getItem().getItemName().trim(), ItemData.itemNAME);
     }
 
     @AfterMethod
