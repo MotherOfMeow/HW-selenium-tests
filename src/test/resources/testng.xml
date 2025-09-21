@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Quick" verbose="1">
-    <test name="QuickTest">
+    <test name="Quick">
         <classes>
             <class name="com.demowebshop.tests.HomePageTest"/>
         </classes>
