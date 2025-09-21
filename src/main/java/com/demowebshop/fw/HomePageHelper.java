@@ -1,4 +1,4 @@
-package fw;
+package com.demowebshop.fw;
 
 import org.openqa.selenium.WebDriver;
 

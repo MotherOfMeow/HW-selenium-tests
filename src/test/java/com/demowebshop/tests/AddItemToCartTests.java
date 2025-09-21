@@ -1,8 +1,8 @@
-package com.ait.qa65;
+package com.demowebshop.tests;
 
-import data.ItemData;
-import data.UserData;
-import models.User;
+import com.demowebshop.data.ItemData;
+import com.demowebshop.data.UserData;
+import com.demowebshop.models.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

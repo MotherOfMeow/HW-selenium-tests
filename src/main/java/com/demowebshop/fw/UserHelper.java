@@ -1,6 +1,6 @@
-package fw;
+package com.demowebshop.fw;
 
-import models.User;
+import com.demowebshop.models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

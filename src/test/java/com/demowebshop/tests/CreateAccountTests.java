@@ -1,7 +1,7 @@
-package com.ait.qa65;
+package com.demowebshop.tests;
 
-import data.UserData;
-import models.User;
+import com.demowebshop.data.UserData;
+import com.demowebshop.models.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

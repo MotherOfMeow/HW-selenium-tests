@@ -1,4 +1,4 @@
-package com.ait.qa65;
+package com.demowebshop.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
