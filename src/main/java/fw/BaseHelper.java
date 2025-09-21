@@ -30,6 +30,10 @@ public class BaseHelper {
         return driver.findElement(locator).getText();
     }
 
+    public String getTitle() {
+        return driver.getTitle();
+    }
+
     public void pause(int millis) {
         try {
             Thread.sleep(millis);

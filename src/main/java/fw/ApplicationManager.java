@@ -10,6 +10,7 @@ public class ApplicationManager {
     UserHelper user;
     CartHelper cart;
     ItemHelper item;
+    HomePageHelper home;
 
     public void init() {
         driver = new ChromeDriver();
@@ -20,6 +21,7 @@ public class ApplicationManager {
         user = new UserHelper(driver);
         item = new ItemHelper(driver);
         cart = new CartHelper(driver);
+        home = new HomePageHelper(driver);
     }
 
     public void stop() {
@@ -42,4 +44,6 @@ public class ApplicationManager {
     public ItemHelper getItem() {
         return item;
     }
+
+    public HomePageHelper getHome() {return home;}
 }
