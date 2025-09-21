@@ -11,12 +11,11 @@ import java.time.Duration;
 
 public class TestBase {
     WebDriver driver;
-    public static String testEmail;
 
     @BeforeClass
-    public void generateEmail() {
+    public String generateEmail() {
         int i = (int) ((System.currentTimeMillis() / 1000) % 3600);
-        testEmail = "hw-test-user" + i + "@gmail.com";
+        return "hw-test-user" + i + "@gmail.com";
     }
 
     @BeforeMethod
@@ -32,9 +31,11 @@ public class TestBase {
     }
 
     public void type(By locator, String text) {
-        driver.findElement(locator).click();
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
+        if (text != null) {
+            driver.findElement(locator).click();
+            driver.findElement(locator).clear();
+            driver.findElement(locator).sendKeys(text);
+        }
     }
 
     public void click(By locator) {
@@ -44,5 +45,42 @@ public class TestBase {
     @AfterMethod()
     public void tearDown() {
         driver.quit();
+    }
+
+    public void clickOnRegistrationLink() {
+        click(By.cssSelector("a[href=\"/register\"]"));
+    }
+
+    public void fillRegisterLoginForm(User user) {
+        click(By.id("gender-female"));
+        type(By.xpath("//*[@id=\"FirstName\"]"), user.getFirstName());
+        type(By.xpath("//*[@id=\"LastName\"]"), user.getLastName());
+        type(By.xpath("//*[@id=\"Email\"]"), user.getEmail());
+        type(By.name("Password"), user.getPassword());
+        type(By.name("ConfirmPassword"), user.getPassword());
+    }
+
+    public void clickOnRegistrationButton() {
+        click(By.id("register-button"));
+    }
+
+    public boolean isSuccessMessagePresent() {
+        return isElementPresent(
+                By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]")
+        );
+    }
+
+    public boolean isUnsuccessMessagePresent() {
+        return isElementPresent(
+                By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[1]/div/ul/li")
+        );
+    }
+
+    public void pause(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
