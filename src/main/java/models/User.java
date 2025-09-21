@@ -1,4 +1,4 @@
-package com.ait.qa65;
+package models;
 
 public class User {
     private String firstName;
