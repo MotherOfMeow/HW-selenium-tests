@@ -10,6 +10,6 @@ public class HomePageHelper extends BaseHelper{
 
     public boolean isHomeComponentPresent() {
         String title = getTitle();
-        return title != null && title.contains("Demo1 Web Shop");
+        return title != null && title.contains("Demo Web Shop");
     }
 }
