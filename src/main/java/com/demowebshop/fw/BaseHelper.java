@@ -15,7 +15,7 @@ public class BaseHelper {
     public BaseHelper(WebDriver driver) {
         this.driver = driver;
     }
-    
+
     public boolean isElementPresent(By locator) {
         return driver.findElements(locator).size() > 0;
     }
@@ -48,7 +48,7 @@ public class BaseHelper {
         }
     }
 
-    public String takeScreenshot(){
+        public String takeScreenshot(){
 
         File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File screenshot = new File("screenshots/screen-" + System.currentTimeMillis() + ".png");
@@ -60,4 +60,5 @@ public class BaseHelper {
         }
         return screenshot.getAbsolutePath();
     }
+
 }

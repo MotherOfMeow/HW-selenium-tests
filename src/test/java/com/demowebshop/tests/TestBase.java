@@ -21,13 +21,9 @@ public class TestBase {
         return app.generateEmail();
     }
 
-    @BeforeSuite
-    public void setUp() {
-        app.init();
-    }
-
     @BeforeMethod
     public void startTest(Method method) {
+        app.init();
         logger.info("Start test " + method.getName());
     }
 
@@ -42,10 +38,6 @@ public class TestBase {
         }
         logger.info("Stop test");
         logger.info("*********************************************************");
-    }
-
-    @AfterSuite
-    public void tearDown() {
         app.stop();
     }
 }
