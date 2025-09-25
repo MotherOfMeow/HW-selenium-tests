@@ -7,7 +7,7 @@
             <class name="com.demowebshop.tests.AddItemToCartTests"/>
             <class name="com.demowebshop.tests.CreateAccountTests">
                 <methods>
-                    <exclude name=".*Negative.*"/>
+                    <exclude name=".*Negative.*"></exclude>
                 </methods>
             </class>
         </classes>

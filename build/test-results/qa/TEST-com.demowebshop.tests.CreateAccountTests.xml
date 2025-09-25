@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.demowebshop.tests.CreateAccountTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-24T14:44:45.204Z" hostname="MacBookAir.local" time="8.135">
+  <properties/>
+  <testcase name="newUserRegistrationPositiveTest" classname="com.demowebshop.tests.CreateAccountTests" time="1.942"/>
+  <testcase name="existedUserRegistrationNegativeTest" classname="com.demowebshop.tests.CreateAccountTests" time="1.64"/>
+  <system-out><![CDATA[16:44:45.204 [Test worker] INFO  com.demowebshop.tests.TestBase -- Start test newUserRegistrationPositiveTest
+16:44:47.147 [Test worker] INFO  com.demowebshop.tests.TestBase -- PASSED: newUserRegistrationPositiveTest
+16:44:47.147 [Test worker] INFO  com.demowebshop.tests.TestBase -- Stop test
+16:44:47.147 [Test worker] INFO  com.demowebshop.tests.TestBase -- *********************************************************
+16:44:51.699 [Test worker] INFO  com.demowebshop.tests.TestBase -- Start test existedUserRegistrationNegativeTest
+16:44:53.339 [Test worker] INFO  com.demowebshop.tests.TestBase -- PASSED: existedUserRegistrationNegativeTest
+16:44:53.339 [Test worker] INFO  com.demowebshop.tests.TestBase -- Stop test
+16:44:53.339 [Test worker] INFO  com.demowebshop.tests.TestBase -- *********************************************************
+]]></system-out>
+  <system-err><![CDATA[сент. 24, 2025 4:44:41 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+сент. 24, 2025 4:44:41 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 140.0.7339.185. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.30.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+сент. 24, 2025 4:44:48 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+сент. 24, 2025 4:44:48 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 140.0.7339.185. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.30.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
