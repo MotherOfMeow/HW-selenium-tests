@@ -24,7 +24,7 @@ task qa(type: Test){
         def suite1 = project.hasProperty("suite1")
         def suite2 = project.hasProperty("suite2")
         if(suite1){
-            suites'src/test/resources/smoky.xml'
+            suites'src/test/resources/regression.xml'
         }else if(suite2)
         {
             suites'src/test/resources/testng.xml'
